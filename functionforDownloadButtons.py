@@ -12,10 +12,12 @@ import importlib.util
 def import_from_file(module_name: str, filepath: str):
     """
     Imports a module from file.
+
     Args:
         module_name (str): Assigned to the module's __name__ parameter (does not
             influence how the module is named outside of this function)
         filepath (str): Path to the .py file
+
     Returns:
         The module
     """
@@ -28,15 +30,18 @@ def import_from_file(module_name: str, filepath: str):
 def notebook_header(text):
     """
     Insert section header into a jinja file, formatted as notebook cell.
+
     Leave 2 blank lines before the header.
     """
     return f"""# # {text}
+
 """
 
 
 def code_header(text):
     """
     Insert section header into a jinja file, formatted as Python comment.
+
     Leave 2 blank lines before the header.
     """
     seperator_len = (75 - len(text)) / 2
@@ -66,22 +71,28 @@ def open_link(url, new_tab=True):
 def download_button(object_to_download, download_filename, button_text):
     """
     Generates a link to download the given object_to_download.
+
     From: https://discuss.streamlit.io/t/a-download-button-with-custom-css/4220
+
     Params:
     ------
     object_to_download:  The object to be downloaded.
     download_filename (str): filename and extension of file. e.g. mydata.csv,
     some_txt_output.txt download_link_text (str): Text to display for download
     link.
+
     button_text (str): Text to display on download button (e.g. 'click here to download file')
     pickle_it (bool): If True, pickle file.
+
     Returns:
     -------
     (str): the anchor tag to download object_to_download
+
     Examples:
     --------
     download_link(your_df, 'YOUR_DF.csv', 'Click to download data!')
     download_link(your_str, 'YOUR_STRING.txt', 'Click to download text!')
+
     """
     # if pickle_it:
     #    try:
