@@ -1,0 +1,6 @@
+.idea
+.ipynb_checkpoints
+notebooks/url.json
+.venv
+token.pickle
+__pycache__
